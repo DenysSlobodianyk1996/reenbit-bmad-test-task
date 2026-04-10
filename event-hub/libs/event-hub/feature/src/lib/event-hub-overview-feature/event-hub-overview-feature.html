@@ -1,0 +1,74 @@
+<p>{{title()}}</p>
+<!-- Filter Form -->
+<div class="filters">
+  <mat-form-field>
+    <mat-label>User ID</mat-label>
+    <input matInput [formControl]="filterForm.get('userId')" placeholder="Filter by user">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Event Type</mat-label>
+    <mat-select [formControl]="filterForm.get('type')">
+      <mat-option value="">All</mat-option>
+      <mat-option value="PageView">Page View</mat-option>
+      <mat-option value="Click">Click</mat-option>
+      <mat-option value="Purchase">Purchase</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-button (click)="clearFilters()">Clear Filters</button>
+</div>
+
+<!-- Loading Spinner -->
+@if(isLoading$ | async) {
+  <div class="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+}
+
+<!-- Events Table -->
+
+@if((isLoading$ | async) === false) {
+  <table mat-table [dataSource]="dataSource" class="events-table">
+    
+    <ng-container matColumnDef="userId">
+      <th mat-header-cell *matHeaderCellDef>User ID</th>
+      <td mat-cell *matCellDef="let event">{{event.userId}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let event">
+        <mat-chip>{{event.type}}</mat-chip>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let event">{{event.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Created At</th>
+      <td mat-cell *matCellDef="let event">{{event.createdAt | date:'medium'}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Empty State -->
+
+  @if(dataSource.data.length === 0) {
+    <div class="empty-state">
+      No events found. <a routerLink="/events/create">Create one?</a>
+    </div>
+  }
+
+  <!-- Paginator -->
+  <mat-paginator [length]="totalCount"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="[10, 20, 50]"
+                 (page)="onPageChange($event)">
+  </mat-paginator>
+}

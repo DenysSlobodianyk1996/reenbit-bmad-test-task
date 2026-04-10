@@ -15,9 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@org/api/products": ["libs/api/products/src/index.ts"],
-      "@org/models": ["libs/shared/models/src/index.ts"],
-      "@org/event-hub-feature": ["libs/event-hub/feature/src/index.ts"]
+      "@org/event-hub-feature": ["libs/event-hub/feature/src/index.ts"],
+      "@org/data": ["libs/event-hub/data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

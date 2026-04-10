@@ -6,4 +6,8 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('@org/event-hub-feature').then((m) => m.eventHubFeatureRoutes),
   },
+  {
+    path: '**',
+    redirectTo: 'event-hub-feature'
+  }
 ];
