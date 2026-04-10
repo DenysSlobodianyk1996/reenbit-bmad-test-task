@@ -1,0 +1,37 @@
+{
+  "name": "Event-Hub-BE",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/Event-Hub-BE",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dotnet build apps/Event-Hub-BE/Event-Hub-BE.csproj",
+        "cwd": "."
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dotnet run --project apps/Event-Hub-BE/Event-Hub-BE.csproj",
+        "cwd": "."
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'No tests configured for Event-Hub-BE'",
+        "cwd": "."
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'No linting configured for Event-Hub-BE'",
+        "cwd": "."
+      }
+    }
+  },
+  "tags": ["backend", "dotnet"]
+}
