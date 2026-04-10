@@ -34,8 +34,8 @@ story_location: "_bmad-output/implementation-artifacts"
 
 development_status:
   # Phase 1: Project Initialization
-  epic-1: backlog
-  1-1-init-nx-workspace: ready-for-dev
+  epic-1: in-progress
+  1-1-init-nx-workspace: in-progress
 
   # Phase 2: Backend Implementation
   epic-2: backlog

@@ -1,0 +1,34 @@
+/* Angular Material Theme - Indigo/Pink */
+@use '@angular/material' as mat;
+
+/* Include the common styles for Angular Material */
+@include mat.elevation-classes();
+@include mat.app-background();
+
+/* Define the theme */
+$event-hub-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+/* Apply the theme */
+:root {
+  @include mat.all-component-themes($event-hub-theme);
+}
+
+/* Global styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
