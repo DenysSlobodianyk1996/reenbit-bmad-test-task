@@ -16,7 +16,7 @@ Event-Hub-BE/
 │   └── EventHubDbContext.cs
 ├── Models/           # Entity models and DTOs
 │   ├── Event.cs
-│   ├── EventType.cs
+│   ├── EventType.cs  # Enum, saved as numbers in database, but support string values from JSON payload
 │   ├── EventQueryRequest.cs
 │   └── EventQueryResponse.cs
 ├── Properties/
@@ -50,10 +50,8 @@ The API will be available at:
 
 ```bash
 # From the workspace root
-npx nx serve Event-Hub-BE
+npx nx run Event-Hub-BE:serve
 
-# Or with npm/pnpm
-npm exec nx serve Event-Hub-BE
 ```
 
 ## API Endpoints
