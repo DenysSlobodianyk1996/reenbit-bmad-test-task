@@ -3,13 +3,16 @@
 ```bash
 # Clone the repository
 git clone <your-fork-url>
-cd <your-repository-name>/event-hub
+cd <your-repository-name>
+
+## Open nx folder and do all actions inside
+cd event-hub
 
 # Install dependencies
 # (Note: You may need --legacy-peer-deps)
 npm install
 
-# Install dotnet 10.0.201 - on MacOS I did
+# If you don't have globally installed, please Install dotnet 10.0.201 - on MacOS I did
 brew install --cask dotnet-sdk
 
 For zsh (~/.zprofile or ~/.zshrc) add this:
@@ -23,6 +26,10 @@ npx nx run Event-Hub-BE:serve
 
 # Serve Event-Hub-FE application (this will simultaneously serve the API backend - Event-Hub-BE)
 npx nx run Event-Hub-FE:serve
+
+FE app:
+- Create a few events via Create Event Form
+- Server side filtering, sorting, paging should works
 
 # Visualize the project graph
 npx nx graph
