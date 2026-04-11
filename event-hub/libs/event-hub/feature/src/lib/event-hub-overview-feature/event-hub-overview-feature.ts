@@ -86,8 +86,8 @@ export class EventHubOverviewFeature implements OnInit, OnDestroy {
   loadEvents(): Observable<EventQueryResponse> {
     this.isLoading$.next(true);
     
-    const sortBy = this.sort?.active;
-    const sortOrder = this.sort?.direction;
+    const sortOrder = this.sort?.direction || undefined;
+    const sortBy = !sortOrder ? undefined : this.sort?.active;
 
     const request: EventQueryRequest = {
       userId: this.filterForm.get('userId')?.value || undefined,
