@@ -3,7 +3,7 @@
 ```bash
 # Clone the repository
 git clone <your-fork-url>
-cd <your-repository-name>
+cd <your-repository-name>/event-hub
 
 # Install dependencies
 # (Note: You may need --legacy-peer-deps)
