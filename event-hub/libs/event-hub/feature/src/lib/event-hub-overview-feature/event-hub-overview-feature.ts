@@ -8,11 +8,14 @@ import { MatFormField, MatLabel, MatSelectModule } from '@angular/material/selec
 import { AsyncPipe, DatePipe } from '@angular/common';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatChip} from '@angular/material/chips';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'lib-event-hub-overview-feature',
   imports: [
+    MatFormFieldModule,
+    MatInputModule,
     DatePipe,
     MatChip,
     MatTableModule,

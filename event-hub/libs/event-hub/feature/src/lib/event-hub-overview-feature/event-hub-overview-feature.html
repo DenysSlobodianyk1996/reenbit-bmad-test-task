@@ -3,12 +3,12 @@
 <div class="filters">
   <mat-form-field>
     <mat-label>User ID</mat-label>
-    <input matInput [formControl]="filterForm.get('userId')" placeholder="Filter by user">
+    <input matInput [formControl]="$any(filterForm.get('userId'))" placeholder="Filter by user">
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Event Type</mat-label>
-    <mat-select [formControl]="filterForm.get('type')">
+    <mat-select [formControl]="$any(filterForm.get('type'))">
       <mat-option value="">All</mat-option>
       <mat-option value="PageView">Page View</mat-option>
       <mat-option value="Click">Click</mat-option>
