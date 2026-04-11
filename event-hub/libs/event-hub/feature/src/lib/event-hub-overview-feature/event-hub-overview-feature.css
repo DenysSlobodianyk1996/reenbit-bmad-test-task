@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  gap: 4px;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}

@@ -1,10 +1,11 @@
 import { EventType } from "./event.model";
+import {SortDirection} from '@angular/material/sort';
 
 export interface EventQueryRequest {
   userId?: string;
   types?: EventType[];
-  sortBy?: 'createdAt' | 'userId' | 'type';
-  sortOrder?: 'asc' | 'desc';
+  sortBy?: string;
+  sortOrder?: SortDirection;
   page: number;
   pageSize: number;
 }

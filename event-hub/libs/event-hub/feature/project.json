@@ -4,7 +4,7 @@
   "sourceRoot": "libs/event-hub/feature/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:feature,scope:event-hub"],
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint"

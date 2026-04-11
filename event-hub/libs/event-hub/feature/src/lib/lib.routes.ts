@@ -10,8 +10,8 @@ export const eventHubFeatureRoutes: Route[] = [
     component: EventHubShellFeature,
     providers: [EventsService],
     children: [
-      { path: 'overview', component:  EventHubOverviewFeature, data: {title: 'Overview'} },
-      { path: 'create', component:  EventHubCreateFeature, data: {title: 'Create Event'} },
+      { path: 'overview', component:  EventHubOverviewFeature, data: {title: 'Event Hub Overview'} },
+      { path: 'create', component:  EventHubCreateFeature, data: {title: 'Event Hub - Create Event'} },
       {
         path: '**',
         redirectTo: 'overview'
